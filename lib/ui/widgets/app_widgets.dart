@@ -1,9 +1,7 @@
-import 'package:automated_work_control/data/extensions/widget_padding_extension.dart';
-import 'package:automated_work_control/data/localization/locale_keys.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:automated_work_control/data/services/navigator_service.dart';
 import 'package:automated_work_control/data/styles/app_colors.dart';
 import 'package:automated_work_control/data/utils/app_image_utils.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:automated_work_control/ui/pages/loading_page/loading_page.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -11,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:super_rich_text/super_rich_text.dart';
 
@@ -36,13 +35,13 @@ Widget _baseText({
   List<MarkerText> othersMarkers = const [],
   TextFont textFont = TextFont.MEDIUM,
 }) {
-  TextStyle textStyle = TextStyle(
+  TextStyle textStyle = GoogleFonts.poppins(
     fontSize: fontSize ?? 16.sp,
     color: color ?? AppColors.MAIN_DARK,
     fontStyle: fontStyle,
     fontWeight: fontWeight,
     height: height,
-    fontFamily: getFont(textFont),
+    // fontFamily: getFont(textFont),
   );
   if (richText) {
     return SuperRichText(
@@ -252,7 +251,7 @@ class AppWidgets {
           textFont: textFont ?? TextFont.MEDIUM),
       leading: hasLeading
           ? InkWell(
-              child: AppWidgets.imageSvg(path: AppImageUtils.IC_ARROW_BACK),
+              child: AppWidgets.imageSvg(path: AppImageUtils.IC_ARROW_RIGHT),
               onTap: () {
                 onTap ?? NavigatorService.to.pop();
               },
@@ -281,83 +280,9 @@ class AppWidgets {
   static Widget progressIndicator() {
     return Center(
       child: SpinKitCircle(
-        color: AppColors.PURPLE_LIGHT,
+        color: AppColors.MAIN,
         size: 25.0,
       ),
-    );
-  }
-
-  static void showPositiveToast({
-    String? text,
-  }) {
-    BotToast.showCustomNotification(
-      toastBuilder: (cancelFunc) => Container(
-        height: 48,
-        decoration: BoxDecoration(
-            color: AppColors.GREEN_BG,
-            borderRadius: BorderRadius.all(
-              Radius.circular(
-                8,
-              ),
-            ),
-            border: Border.all(
-              width: 1,
-              color: AppColors.GREEN_BORDER,
-            )),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            AppWidgets.imageAsset(
-              height: 28,
-              width: 28,
-              path: AppImageUtils.DONE_TOAST,
-            ).paddingOnly(left: 10),
-            AppWidgets.textLocale(
-              text: text ?? LocaleKeys.str_template_successfully_created,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ).paddingOnly(left: 10)
-          ],
-        ),
-      ).paddingAll(20),
-    );
-  }
-
-  static void showNegativeToast({
-    String? text,
-  }) {
-    BotToast.showCustomNotification(
-      toastBuilder: (cancelFunc) => Container(
-        height: 48,
-        decoration: BoxDecoration(
-            color: AppColors.RED_TOAST_BG,
-            borderRadius: BorderRadius.all(
-              Radius.circular(
-                8,
-              ),
-            ),
-            border: Border.all(
-              width: 1,
-              color: AppColors.RED_TOAST_BORDER,
-            )),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            AppWidgets.imageAsset(
-              height: 28,
-              width: 28,
-              path: AppImageUtils.REMOVED_TOAST,
-            ).paddingOnly(left: 10),
-            AppWidgets.textLocale(
-              text: text ?? LocaleKeys.str_template_removed,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ).paddingOnly(left: 10)
-          ],
-        ),
-      ).paddingAll(20),
     );
   }
 }

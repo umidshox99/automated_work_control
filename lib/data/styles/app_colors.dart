@@ -6,7 +6,7 @@ import 'app_theme_color.dart';
 class AppColors {
   // Color Names: Color names must be private
   static AppThemeColor _MAIN = AppThemeColor(
-    lightColor: Colors.black,
+    lightColor: Color(0xff5964D1),
   );
 
   static AppThemeColor _MAIN_DARK = AppThemeColor(

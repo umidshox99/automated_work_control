@@ -1,7 +1,6 @@
 import 'package:automated_work_control/data/localization/locale_keys.dart';
 import 'package:automated_work_control/data/model/language_item.dart';
 import 'package:automated_work_control/data/services/navigator_service.dart';
-import 'package:automated_work_control/data/utils/app_image_utils.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:equatable/equatable.dart';
@@ -32,32 +31,28 @@ class LanguageCubit extends HydratedCubit<LanguageState> {
     emit(state.copyWith(locale: locale));
   }
 
-
   final List<LanguageItem> languages = [
     LanguageItem(
-        languageLocaleKey: LocaleKeys.str_uzbek,
-        locale: Locale('uz', 'UZ'),
-        flag: AppImageUtils.IC_UZ_FLAG,
-        description: "(Lotin)"),
-    LanguageItem(
-        languageLocaleKey: LocaleKeys.str_uzbek_cyrl,
-        locale: Locale('uz', 'Cyrl'),
-        flag: AppImageUtils.IC_UZ_FLAG,
-        description: "(Kiril)"),
+      languageLocaleKey: LocaleKeys.str_uzbek,
+      locale: Locale('uz', 'UZ'),
+    ),
+    // LanguageItem(
+    //     languageLocaleKey: LocaleKeys.str_uzbek_cyrl,
+    //     locale: Locale('uz', 'Cyrl'),
+    //     flag: AppImageUtils.IC_UZ_FLAG,
+    //     description: "(Kiril)"),
     LanguageItem(
       languageLocaleKey: LocaleKeys.str_english,
       locale: Locale('en', 'EN'),
-      flag: AppImageUtils.IC_EN_FLAG,
     ),
-    LanguageItem(
-      languageLocaleKey: LocaleKeys.str_karakalpak,
-      locale: Locale('uk', 'UA'),
-      flag: AppImageUtils.IC_KAA_FLAG,
-    ),
+    // LanguageItem(
+    //   languageLocaleKey: LocaleKeys.str_karakalpak,
+    //   locale: Locale('uk', 'UA'),
+    //   flag: AppImageUtils.IC_KAA_FLAG,
+    // ),
     LanguageItem(
       languageLocaleKey: LocaleKeys.str_russian,
       locale: Locale('ru', 'RU'),
-      flag: AppImageUtils.IC_RU_FLAG,
     ),
   ];
 

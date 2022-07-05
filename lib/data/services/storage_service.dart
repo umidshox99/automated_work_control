@@ -44,28 +44,12 @@ class StorageService {
     return _box.get(_StorageKeys.ACCESS_TOKEN, defaultValue: "");
   }
 
-  Future<void> setSignedIn(bool value) {
-    return _box.put(_StorageKeys.SIGNED_IN, value);
+  Future<void> setURL(String url) async {
+    return _box.put(_StorageKeys.URL, url);
   }
 
-  bool getSignedIn() {
-    return _box.get(_StorageKeys.SIGNED_IN, defaultValue: false);
-  }
-
-  Future<void> setCourseId(int value) async {
-    return _box.put(_StorageKeys.COURSE_ID, value);
-  }
-
-  int getCourseId() {
-    return _box.get(_StorageKeys.COURSE_ID, defaultValue: -1);
-  }
-
-  Future<void> setLevelId(int value) async {
-    return _box.put(_StorageKeys.LEVEL_ID, value);
-  }
-
-  int getLevelId() {
-    return _box.get(_StorageKeys.LEVEL_ID, defaultValue: -1);
+  String getURL() {
+    return _box.get(_StorageKeys.URL, defaultValue: "");
   }
 
   Future clearAll() async {
@@ -85,8 +69,6 @@ class _StorageKeys {
   static const LOCALE = 'locale';
   static const THEME_MODE = 'theme_mode';
   static const ACCESS_TOKEN = 'access_token';
-  static const SIGNED_IN = 'signed_in';
-  static const COURSE_ID = 'course_id';
-  static const LEVEL_ID = 'level_id';
+  static const URL = 'url';
   static const FCM_TOKEN = 'fcm_token';
 }

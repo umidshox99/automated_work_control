@@ -6,6 +6,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTextField extends StatefulWidget {
   final String? labelText;
@@ -105,19 +106,17 @@ class _AppTextFieldState extends State<AppTextField> {
             filled: true,
             labelText:
                 widget.labelText != null ? tr(widget.labelText ?? "") : null,
-            labelStyle: TextStyle(
+            labelStyle: GoogleFonts.poppins(
               fontSize: widget.fontSize.sp,
-              color: AppColors.TEXT_HINT,
+              color: AppColors.WHITE.withOpacity(0.64),
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.w400,
-              fontFamily: getFont(TextFont.MEDIUM),
             ),
-            hintStyle: TextStyle(
+            hintStyle: GoogleFonts.poppins(
               fontSize: widget.fontSize.sp,
-              color: widget.hintColor ?? AppColors.TEXT_HINT,
+              color: widget.hintColor ?? AppColors.WHITE.withOpacity(0.64),
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.w400,
-              fontFamily: getFont(TextFont.MEDIUM),
             ),
             hintText: tr(widget.hintText),
             focusedBorder: _border,
@@ -141,9 +140,9 @@ class _AppTextFieldState extends State<AppTextField> {
                       });
                     },
                     child: AppWidgets.imageSvg(
-                      path: obscureText
-                          ? AppImageUtils.IC_EYE_HIDE
-                          : AppImageUtils.IC_EYE_HIDE,
+                      path: !obscureText
+                          ? AppImageUtils.IC_NOT_VISIBLE
+                          : AppImageUtils.IC_VISIBLE,
                     ).paddingOnly(
                       left: 14.w,
                       bottom: 14.h,
@@ -159,9 +158,8 @@ class _AppTextFieldState extends State<AppTextField> {
               : [
                   widget.textInputFormatter!,
                 ],
-          style: TextStyle(
+          style: GoogleFonts.poppins(
               fontSize: widget.fontSize,
-              fontFamily: getFont(TextFont.MEDIUM),
               color: widget.textColor ?? AppColors.WHITE,
               fontWeight: FontWeight.w500),
           keyboardType: widget.textInputType,

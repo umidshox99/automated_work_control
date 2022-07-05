@@ -8,46 +8,29 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_spinkit: ^5.1.0
   pattern_formatter: ^2.0.0
   bloc: ^8.0.3
   dio: ^4.0.0
   easy_localization: ^3.0.0
-  #  easy_localization_loader: ^1.0.0
   equatable: ^2.0.0
   floor: ^1.1.0
   flutter_bloc: ^8.0.1
   get_it: ^7.2.0
-  #  google_fonts: ^2.3.1
   hive: ^2.0.2
   hive_flutter: ^1.0.0
   logger: ^1.0.0
   hydrated_bloc: ^8.0.0
-  #  path_provider: ^2.0.9
   flutter_screenutil: ^5.4.0+1
   bot_toast: ^4.0.1
   auto_size_text: ^3.0.0
   flutter_svg: ^1.0.3
-  #  card_swiper: ^2.0.1
-  #  cached_network_image: ^3.1.0+1
   super_rich_text: ^1.0.0
-#  file_picker: ^4.6.1
-  #  mask_text_input_formatter: ^2.1.0
-  #  animations: ^2.0.2
-#  dotted_border: ^2.0.0+2
-#  simple_ripple_animation: ^0.0.3
-#  carousel_slider: ^4.0.0
-#  permission_handler: ^9.2.0
   simple_gradient_text: ^1.2.2
-#  percent_indicator: ^4.0.0
-#  pull_to_refresh: ^2.0.0
-#  shimmer: ^2.0.0
-#  google_maps_flutter: ^2.1.6
-#  flutter_rating_bar: ^4.0.0
-#  url_launcher: ^6.1.0
-#  lottie: ^1.3.0
-#  smooth_page_indicator: ^1.0.0+2
   connectivity_plus: ^2.3.3
+  smooth_page_indicator: ^1.0.0+2
+  google_fonts: ^3.0.1
+  dotted_border: ^2.0.0+2
+  flutter_spinkit: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -72,10 +55,8 @@ flutter:
   assets:
     - assets/langs/
     - assets/icons/
-    - assets/icons/flags/
     - assets/images/
     - assets/fonts/
-    - assets/lottie/
 
 import_sorter:
   emojis: true

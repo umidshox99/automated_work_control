@@ -35,7 +35,7 @@ class AppButton extends StatelessWidget {
         fixedSize: width == null ? Size.fromWidth(1.sw) : Size.fromWidth(width!),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
-            4.w,
+            12.w,
           ),
         ),
       ),
