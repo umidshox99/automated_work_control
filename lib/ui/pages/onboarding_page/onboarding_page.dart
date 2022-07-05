@@ -34,7 +34,7 @@ class OnBoardingPage extends StatelessWidget {
                     onPageChanged: (index) {
                       context.read<OnBoardingCarouselCubit>().changed(index);
                     },
-                    itemBuilder: (context, index) => AppWidgets.imageAsset(
+                    itemBuilder: (context, index) => AppWidgets.imageSvg(
                       path: state.items[index].image,
                       fit: BoxFit.fill,
                     ),

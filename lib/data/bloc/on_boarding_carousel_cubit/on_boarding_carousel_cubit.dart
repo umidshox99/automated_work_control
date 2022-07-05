@@ -16,15 +16,15 @@ class OnBoardingCarouselCubit extends Cubit<OnBoardingCarouselState> {
           index: 0,
           items: [
             OnBoardingModel(
-                image: AppImageUtils.INTO_1,
+                image: AppImageUtils.IC_INTO_1,
                 title: LocaleKeys.str_intro_title_1,
                 body: LocaleKeys.str_intro_body_1),
             OnBoardingModel(
-                image: AppImageUtils.INTO_2,
+                image: AppImageUtils.IC_INTO_2,
                 title: LocaleKeys.str_intro_title_2,
                 body: LocaleKeys.str_intro_body_2),
             OnBoardingModel(
-                image: AppImageUtils.INTO_3,
+                image: AppImageUtils.IC_INTO_3,
                 title: LocaleKeys.str_intro_title_3,
                 body: LocaleKeys.str_intro_body_3),
           ],

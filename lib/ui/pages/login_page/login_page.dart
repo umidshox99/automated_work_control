@@ -110,10 +110,10 @@ class LoginPage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            AppWidgets.imageAsset(
+                            AppWidgets.imageSvg(
                               height: 260,
                               width: 260,
-                              path: AppImageUtils.LOGIN_ILLUSTRATION,
+                              path: AppImageUtils.IC_LOGIN_ILLUSTRATION,
                               fit: BoxFit.cover,
                             ),
                           ],
