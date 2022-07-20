@@ -24,14 +24,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Future _onSignedIn(LoginSignedIn event, Emitter<LoginState> emit) async {
     emit(state.copyWith(isLoading: true));
-    bool? loginResponse = await LoginRegisterService.to.signIn(
+    String? loginResponse = await LoginRegisterService.to.signIn(
       login: state.login,
       password: state.password,
     );
     if (loginResponse != null) {
-      AppLoggerUtils.e(loginResponse.toString());
       await StorageService.to.setAccessToken(
-        "loginResponse.token!",
+        loginResponse,
       );
       UserModel? user = await UserService.to.getUser();
       if (user != null) {

@@ -23,7 +23,7 @@ class UserService {
 
   Options get options => Options(
         headers: {
-          "Authorization": "Bearer ${StorageService.to.getAccessToken()}",
+          "Authorization": "Token ${StorageService.to.getAccessToken()}",
         },
       );
 

@@ -1,4 +1,5 @@
 import 'package:automated_work_control/data/services/navigator_service.dart';
+import 'package:automated_work_control/data/services/storage_service.dart';
 import 'package:automated_work_control/ui/pages/login_page/login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -34,8 +35,8 @@ class SetUrlPage extends StatelessWidget {
             ),
             MaterialButton(
               onPressed: () {
-                // String url = controller.text.trim().toString().substring(8);
-                // StorageService.to.setURL(url);
+                String url = controller.text.trim().toString().substring(8);
+                StorageService.to.setURL(url);
                 NavigatorService.to.pushReplacementNamed(LoginPage.routeName);
               },
               height: 55,

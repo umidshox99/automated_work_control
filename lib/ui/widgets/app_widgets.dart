@@ -4,6 +4,7 @@ import 'package:automated_work_control/data/styles/app_colors.dart';
 import 'package:automated_work_control/data/utils/app_image_utils.dart';
 import 'package:automated_work_control/ui/pages/loading_page/loading_page.dart';
 import 'package:bot_toast/bot_toast.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -187,6 +188,21 @@ class AppWidgets {
       width: width,
       fit: fit,
       color: color,
+    );
+  }
+
+  static Widget imageNetwork({
+    required String path,
+    double? height,
+    double? width,
+    Color? color,
+    BoxFit fit = BoxFit.cover,
+  }) {
+    return CachedNetworkImage(
+      imageUrl: path,
+      progressIndicatorBuilder: (context, url, downloadProgress) =>
+          CircularProgressIndicator(value: downloadProgress.progress),
+      errorWidget: (context, url, error) => Icon(Icons.error),
     );
   }
 

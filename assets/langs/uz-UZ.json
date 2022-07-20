@@ -15,6 +15,25 @@
   "str_password": "Password",
   "str_forgot_password": "Forgot password",
   "str_login": "Log In",
-  "str_create_account": "Create account"
-
+  "str_create_account": "Create account",
+  "str_home": "Home",
+  "str_calendar": "Calendar",
+  "str_doc_flow": "Doc flow",
+  "str_chat": "Chat",
+  "str_profile": "Profile",
+  "str_today": "Today",
+  "str_messages": "Messages",
+  "str_deadlines": "Deadlines",
+  "str_birthdays": "Birthdays",
+  "str_unread_messages": "Unread messages",
+  "str_document_exchange": "Document exchange",
+  "str_documents": "{} Documents",
+  "str_docs": "{} docs",
+  "str_to_view": "To view",
+  "str_to_do": "To do",
+  "str_birthdays_today": "Birthdays of today",
+  "str_see_all": "See all",
+  "str_my_agenda": "My agenda",
+  "str_do_not_have_activity": "Currently you don’t have any Activities.",
+  "str_add_meeting": "A meeting or an event or a phone call?"
 }

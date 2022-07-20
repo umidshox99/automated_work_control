@@ -23,12 +23,12 @@ class LoginRegisterService {
 
   Options get options => Options(
         headers: {
-          "Authorization": "Bearer ${StorageService.to.getAccessToken()}",
+          "Authorization": "Token ${StorageService.to.getAccessToken()}",
         },
       );
 
-  /// Sign In and return [Login] or null
-  Future<bool?> signIn({
+  /// Sign In and return token or null
+  Future<String?> signIn({
     required String login,
     required String password,
   }) async {
@@ -36,15 +36,15 @@ class LoginRegisterService {
       Response response = await dio.post(
         AppAPIUtils.API_LOGIN,
         data: {
-          "userName": login,
+          "username": "998"+login,
           "password": password,
         },
       );
       if (response.statusCode == HttpStatus.ok) {
         AppLoggerUtils.e(response.toString());
-        return true;
+        return response.data["token"];
       }
-      return false;
+      return null;
     } catch (e) {
       AppLoggerUtils.e(e.toString());
       return null;

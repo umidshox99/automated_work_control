@@ -81,7 +81,7 @@ class AppColors {
     lightColor: Color(0xffFF9790),
   );
   static AppThemeColor _GREY = AppThemeColor(
-    lightColor: Color(0xffB3B4C6),
+    lightColor: Color(0xffBBBBBB),
   );
   static AppThemeColor _GREY_BG = AppThemeColor(
     lightColor: Color(0xffF6F7F7),
@@ -130,12 +130,20 @@ class AppColors {
   );
   static AppThemeColor _GREEN_BORDER_2 = AppThemeColor(
     lightColor: Color(0xff2BCBBA),
-  );  static AppThemeColor _BLUE_BORDER = AppThemeColor(
+  );
+  static AppThemeColor _BLUE_BORDER = AppThemeColor(
     lightColor: Color(0xff45AAF2),
+  );
+  static AppThemeColor _BACKGROUND = AppThemeColor(
+    lightColor: Color(0xffF7F9FE),
+  );
+  static AppThemeColor _DARK_GREY = AppThemeColor(
+    lightColor: Color(0xff171717),
   );
 
   // Colors for public usage
   static Color MAIN = AppColors._MAIN.get(_themeMode);
+  static Color DARK_GREY = AppColors._DARK_GREY.get(_themeMode);
 
   static Color WHITE = AppColors._WHITE.get(_themeMode);
 
@@ -178,6 +186,7 @@ class AppColors {
   static Color GREEN_BORDER_2 = AppColors._GREEN_BORDER_2.get(_themeMode);
   static Color BLUE_BORDER = AppColors._BLUE_BORDER.get(_themeMode);
   static Color GREY_BG = AppColors._GREY_BG.get(_themeMode);
+  static Color BACKGROUND = AppColors._BACKGROUND.get(_themeMode);
 
   static ThemeMode get _themeMode => ThemeCubit.to.state.themeMode;
 }

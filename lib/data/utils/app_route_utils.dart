@@ -1,3 +1,4 @@
+import 'package:automated_work_control/ui/pages/app_page/app_page.dart';
 import 'package:automated_work_control/ui/pages/loading_page/loading_page.dart';
 import 'package:automated_work_control/ui/pages/login_page/login_page.dart';
 import 'package:automated_work_control/ui/pages/onboarding_page/onboarding_page.dart';
@@ -22,6 +23,14 @@ class AppRouteUtils {
       case LoginPage.routeName:
         return MaterialPageRoute(
           builder: (context) => LoginPage(),
+        );
+      case LoginPage.routeName:
+        return MaterialPageRoute(
+          builder: (context) => LoginPage(),
+        );
+      case AppPage.routeName:
+        return MaterialPageRoute(
+          builder: (context) => AppPage(),
         );
     }
   }

@@ -57,89 +57,24 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     return Container(
-      height: widget.height + MediaQuery.of(context).viewPadding.bottom,
-      width: width,
-      decoration: BoxDecoration(
-          color: AppColors.WHITE,
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(8.r), topRight: Radius.circular(8.r)),
-          boxShadow: [
-            BoxShadow(color: Colors.black12, blurRadius: 10),
-          ]),
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-            width: width,
-            top: 0,
-            child: Container(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: items.map((item) {
-                  var index = items.indexOf(item);
-                  return Material(
-                    color: AppColors.WHITE,
-                    child: InkResponse(
-                      splashColor: AppColors.PURPLE_LIGHT.withOpacity(0.1),
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () => _select(index),
-                      child:
-                          _buildItemWidget(item, index == widget.currentIndex),
-                    ),
-                  );
-                }).toList(),
-              ),
-            ).paddingOnly(top: widget.indicatorHeight),
-          ),
-          Positioned(
-            top: 0,
-            width: width,
-            child: AnimatedAlign(
-              alignment:
-                  Alignment(_getIndicatorPosition(widget.currentIndex), 0),
-              curve: curve,
-              duration: duration,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: AppColors.INDICATOR,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(8.r),
-                      bottomRight: Radius.circular(8.r)),
-                ),
-                width: width / items.length - 24,
-                height: widget.indicatorHeight,
-              ),
-            ).paddingSymmetric(horizontal: 12.w),
-          ),
-          Positioned(
-            top: 0,
-            width: width,
-            child: AnimatedAlign(
-              alignment:
-                  Alignment(_getIndicatorPosition(widget.currentIndex), 0),
-              curve: curve,
-              duration: duration,
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      AppColors.INDICATOR.withOpacity(0.2),
-                      AppColors.INDICATOR.withOpacity(0),
-                      AppColors.INDICATOR.withOpacity(0),
-                    ],
-                  ),
-                ),
-                width: width / items.length - 24,
-                height: DEFAULT_BAR_HEIGHT,
-              ),
-            ).paddingSymmetric(horizontal: 12.w),
-          ),
-        ],
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: items.map((item) {
+          var index = items.indexOf(item);
+          return Material(
+            color: AppColors.WHITE,
+            child: InkResponse(
+              splashColor: AppColors.MAIN.withOpacity(0.1),
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () => _select(index),
+              child: _buildItemWidget(item, index == widget.currentIndex),
+            ),
+          );
+        }).toList(),
       ),
-    );
+    ).paddingOnly(top: widget.indicatorHeight);
   }
 
   void _select(int index) {
@@ -151,11 +86,12 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
 
   Widget _buildIcon(TitledNavigationBarItem item, bool isSelected) {
     return Container(
-      child: AppWidgets.imageAsset(
-        path: isSelected ? item.selectedImage : item.unselectedImage,
+      child: AppWidgets.imageSvg(
+        path: isSelected ? item.image : item.image,
         width: 24,
         height: 24,
         fit: BoxFit.fill,
+        color: isSelected ? AppColors.MAIN : AppColors.GREY,
       ).paddingOnly(top: 4.h),
     );
   }
@@ -164,9 +100,9 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
     return AppWidgets.textLocale(
       textAlign: TextAlign.center,
       text: item.title,
-      fontWeight: FontWeight.w500,
-      color: isSelected ? AppColors.MAIN_DARK : AppColors.SECONDARY,
-      fontSize: 11,
+      fontWeight: isSelected ? FontWeight.w500 : FontWeight.w400,
+      color: isSelected ? AppColors.MAIN : AppColors.GREY,
+      fontSize: 12,
     ).paddingOnly(top: 4.h, bottom: 8.h);
   }
 

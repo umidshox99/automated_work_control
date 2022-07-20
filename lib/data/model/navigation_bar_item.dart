@@ -1,12 +1,9 @@
 class TitledNavigationBarItem {
   final String title;
-
-  final String selectedImage;
-  final String unselectedImage;
+  final String image;
 
   TitledNavigationBarItem({
     required this.title,
-    required this.selectedImage,
-    required this.unselectedImage,
+    required this.image,
   });
 }

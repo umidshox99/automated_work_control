@@ -1,8 +1,10 @@
 import 'package:automated_work_control/data/bloc/login_bloc/login_bloc.dart';
 import 'package:automated_work_control/data/extensions/widget_padding_extension.dart';
 import 'package:automated_work_control/data/localization/locale_keys.dart';
+import 'package:automated_work_control/data/services/navigator_service.dart';
 import 'package:automated_work_control/data/styles/app_colors.dart';
 import 'package:automated_work_control/data/utils/app_image_utils.dart';
+import 'package:automated_work_control/ui/pages/app_page/app_page.dart';
 import 'package:automated_work_control/ui/widgets/app_button.dart';
 import 'package:automated_work_control/ui/widgets/app_text_field.dart';
 import 'package:automated_work_control/ui/widgets/app_widgets.dart';
@@ -41,7 +43,12 @@ class LoginPage extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (context) => LoginBloc(),
-        child: BlocBuilder<LoginBloc, LoginState>(
+        child: BlocConsumer<LoginBloc, LoginState>(
+          listener: (context, state) {
+            if (state.loginSuccess) {
+              NavigatorService.to.pushReplacementNamed(AppPage.routeName);
+            }
+          },
           builder: (context, state) {
             return Column(
               children: [
@@ -125,6 +132,8 @@ class LoginPage extends StatelessWidget {
                         ),
                         onTap: () {
                           // NavigatorService.to.pushReplacementNamed(AppPage.routeName);
+                          NavigatorService.to
+                              .pushReplacementNamed(AppPage.routeName);
                         },
                         child: DottedBorder(
                           strokeWidth: 1,

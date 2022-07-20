@@ -18,5 +18,25 @@ abstract class  LocaleKeys {
   static const str_forgot_password = 'str_forgot_password';
   static const str_login = 'str_login';
   static const str_create_account = 'str_create_account';
+  static const str_home = 'str_home';
+  static const str_calendar = 'str_calendar';
+  static const str_doc_flow = 'str_doc_flow';
+  static const str_chat = 'str_chat';
+  static const str_profile = 'str_profile';
+  static const str_today = 'str_today';
+  static const str_messages = 'str_messages';
+  static const str_deadlines = 'str_deadlines';
+  static const str_birthdays = 'str_birthdays';
+  static const str_unread_messages = 'str_unread_messages';
+  static const str_document_exchange = 'str_document_exchange';
+  static const str_documents = 'str_documents';
+  static const str_docs = 'str_docs';
+  static const str_to_view = 'str_to_view';
+  static const str_to_do = 'str_to_do';
+  static const str_birthdays_today = 'str_birthdays_today';
+  static const str_see_all = 'str_see_all';
+  static const str_my_agenda = 'str_my_agenda';
+  static const str_do_not_have_activity = 'str_do_not_have_activity';
+  static const str_add_meeting = 'str_add_meeting';
 
 }
